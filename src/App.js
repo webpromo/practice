@@ -16,10 +16,14 @@ class App extends Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount(){ 
     axios.get("/api/products")
-    .then((results => this.setState({ prods: results.data })));
-    console.log(this.state.prods)
+    .then((results => this.setState({ prods: results.data })))
+    .catch( err => {
+      console.log("err: "+err);
+      // res.status(500).send(err);
+      });
+
   }
 
   render() { 

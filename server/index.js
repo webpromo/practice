@@ -6,7 +6,7 @@ const massive = require('massive');
 require('dotenv').config();
 
 const app = express();
-massive(CONNECTION_STRING="")
+massive(CONNECTION_STRING="withheld for security")
 .then( dbInstance => app.set('db', dbInstance))
 .catch( err => {
     console.log(err);
@@ -19,6 +19,6 @@ app.use( cors() );
 // const productCtrl = require
 app.get('/api/products', )
  
-const port = process.env.PORT || 3006;
+const port = process.env.PORT || 3001;
 // console.log(port); 
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
